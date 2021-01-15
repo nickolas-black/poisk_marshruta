@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends "base.html" %}
+{% block title%}Города {% endblock%}
+
+{% block content%}
+    <h1 class="display-4 text-center my-4">Города</h1>
+    <div class="row ">
+        <div class='col-md-6 mx-auto'>
+            {% for object in objects_list%}
+            <p>{{object.name}}</p>
+                {% endfor %}
+        </div>
+    </div>
+{% endblock%}
