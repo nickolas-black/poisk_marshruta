@@ -11,16 +11,8 @@ from .forms import CityForm
 
 
 def home(request):
-    # if request.method == 'POST':
-    #     form = CityForm(request.POST or None)
-    #     if form.is_valid():
-    #         print(form.cleaned_data)
-    # form = CityForm()
-    # # print(request.POST)
-    # city = request.POST.get('name')
-    # # print(city)
     cities = City.objects.all()
-    paginator = Paginator(cities, 2)
+    paginator = Paginator(cities, 6)
     page = request.GET.get('page')
     cities = paginator.get_page(page)
     return render(request, 'cities/home.html', {'objects_list': cities, })
@@ -53,7 +45,6 @@ class CityUpdateView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
 class CityDeleteView(LoginRequiredMixin, DeleteView):
     login_url = '/login/'
     model = City
-    # template_name = 'cities/delete.html'
     success_url = reverse_lazy('city:home')
 
     def get(self, request, *args, **kwargs):
