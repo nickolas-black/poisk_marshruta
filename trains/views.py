@@ -45,7 +45,6 @@ class TrainUpdateView(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
 class TrainDeleteView(LoginRequiredMixin, DeleteView):
     login_url = '/login/'
     model = Train
-    # template_name = 'trains/delete.html'
     success_url = reverse_lazy('train:home')
 
     def get(self, request, *args, **kwargs):
