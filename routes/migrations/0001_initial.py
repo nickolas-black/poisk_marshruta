@@ -23,8 +23,8 @@ class Migration(migrations.Migration):
                 ('across_cities', models.ManyToManyField(blank=True, to='trains.Train', verbose_name='Через города')),
             ],
             options={
-                'verbose_name': 'Маршрут',
                 'verbose_name_plural': 'Маршруты',
+                'verbose_name': 'Маршрут',
                 'ordering': ['name'],
             },
         ),

@@ -16,4 +16,3 @@ class Route(models.Model):
         verbose_name = 'Маршрут'
         verbose_name_plural = 'Маршруты'
         ordering = ['name']
-
